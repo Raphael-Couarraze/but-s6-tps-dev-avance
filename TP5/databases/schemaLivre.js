@@ -1,3 +1,5 @@
+const mongoose = require('mongoose');
+
 const livreSchema = new mongoose.Schema({
     titre: {type:String, required:true},
     auteur:String,
@@ -6,3 +8,5 @@ const livreSchema = new mongoose.Schema({
             enum:["poche","manga","audio"],
             default:"poche"}
 });
+
+const Livre = mongoose.model('Livre', livreSchema);
